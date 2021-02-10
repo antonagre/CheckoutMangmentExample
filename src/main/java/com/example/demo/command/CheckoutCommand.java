@@ -3,6 +3,6 @@ package com.example.demo.command;
 import lombok.Data;
 
 @Data
-public class checkoutCommand {
+public class CheckoutCommand {
     String id;
 }

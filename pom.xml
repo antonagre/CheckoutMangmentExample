@@ -23,6 +23,11 @@
     </dependency>
     <dependencies>
         <dependency>
+            <groupId>org.json4s</groupId>
+            <artifactId>json4s-xml_2.13</artifactId>
+            <version>3.7.0-M8</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>

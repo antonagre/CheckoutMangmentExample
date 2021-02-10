@@ -24,9 +24,10 @@ public class ProductEndpoint {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getProductRequest")
     @ResponsePayload
     public GetProductResponse getProduct(@RequestPayload GetProductRequest request) {
+        System.out.println("Prima della request");
         GetProductResponse response = new GetProductResponse();
         response.setProduct(productRepository.findProduct(request.getName()));
-
+        System.out.println("Dopo la request");
         return response;
     }
 }

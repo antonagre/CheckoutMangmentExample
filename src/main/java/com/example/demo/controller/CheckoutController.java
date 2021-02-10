@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/checkout")
-public class checkoutController {
+public class CheckoutController {
     @Autowired
     CheckoutService service;
 
