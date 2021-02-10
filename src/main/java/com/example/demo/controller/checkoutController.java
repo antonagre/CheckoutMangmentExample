@@ -1,29 +1,21 @@
 package com.example.demo.controller;
 
-import com.example.demo.repository.IOrderRepository;
-import com.example.demo.repository.IProductRepository;
-import com.example.demo.dto.checkoutDTO;
-import com.example.demo.model.Order;
-import com.example.demo.model.Product;
+import com.example.demo.service.CheckoutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @RestController
 @RequestMapping("/checkout")
 public class checkoutController {
     @Autowired
-    IProductRepository productRepository;
-
-    @Autowired
-    IOrderRepository orderRepository;
+    CheckoutService service;
 
     @GetMapping("/order/get")
     public ResponseEntity getOrder(@RequestParam String id){
         System.out.println("prima");
-        ResponseEntity res = ResponseEntity.ok(checkoutDTO.builder().id(id).total(10).build());
+        ResponseEntity res = ResponseEntity.ok(service.getOrder(id));
         System.out.println("dopo");
         return res;
     }
@@ -31,7 +23,7 @@ public class checkoutController {
     @PostMapping("/order/create")
     public ResponseEntity createOrder(@RequestParam String id){
         System.out.println("prima");
-        ResponseEntity res = ResponseEntity.ok(orderRepository.save(Order.builder().orderId(id).cart(new ArrayList<Product>()).build()));
+        ResponseEntity res = service.createOrder(id);
         System.out.println("dopo");
         return res;
     }
@@ -39,12 +31,7 @@ public class checkoutController {
     @PostMapping("/order/add")
     public ResponseEntity addOrder(@RequestParam String id,String name){
         System.out.println("prima");
-        Order o = orderRepository.findDistinctByOrderId(id);
-        Product p = productRepository.findProductByName(name);
-        List<Product> cart = o.getCart();
-        cart.add(p);
-        o.setCart(cart);
-        ResponseEntity res = ResponseEntity.ok(orderRepository.save(o));
+        ResponseEntity res = service.addOrder(id,name);
         System.out.println("dopo");
         return res;
     }
