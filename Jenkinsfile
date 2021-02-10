@@ -7,14 +7,14 @@ pipeline{
         stage ('Compile Stage') {
             steps {
                 withMaven {
-                    sh 'mvnw clean install -DskipTests'
+                    sh 'mvn clean install -DskipTests'
                 }
             }
         }
    stage ('Test Stage') {
             steps {
                 withMaven {
-                    sh 'mvnw clean install'
+                    sh 'mvn clean install'
                 }
             }
         }
