@@ -23,7 +23,7 @@ public class checkoutController {
     @PostMapping("/order/create")
     public ResponseEntity createOrder(@RequestParam String id){
         System.out.println("prima");
-        ResponseEntity res = service.createOrder(id);
+        ResponseEntity res = ResponseEntity.ok(service.createOrder(id));
         System.out.println("dopo");
         return res;
     }
@@ -31,7 +31,7 @@ public class checkoutController {
     @PostMapping("/order/add")
     public ResponseEntity addOrder(@RequestParam String id,String name){
         System.out.println("prima");
-        ResponseEntity res = service.addOrder(id,name);
+        ResponseEntity res = ResponseEntity.ok(service.addProductToOrder(id,name));
         System.out.println("dopo");
         return res;
     }

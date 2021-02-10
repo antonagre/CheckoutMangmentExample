@@ -15,5 +15,6 @@ public class Order {
     String _id;
     String orderId;
     List<Product> cart;
+    int total;
 
 }
