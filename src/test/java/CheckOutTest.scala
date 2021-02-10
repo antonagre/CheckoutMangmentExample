@@ -10,5 +10,6 @@ object CheckOutTest extends App{
     .option(HttpOptions.readTimeout(0))
   http.option(HttpOptions.allowUnsafeSSL)
   println(http.asString.body)
+
 }
 
