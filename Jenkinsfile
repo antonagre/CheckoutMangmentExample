@@ -16,7 +16,7 @@ pipeline{
    stage ('Test Stage') {
             steps {
                 withMaven {
-                    sh 'mvn clean install '
+                    sh 'mvn clean install && java -jar target/demo-0.0.1-SNAPSHOT.jar'
                 }
             }
    }
