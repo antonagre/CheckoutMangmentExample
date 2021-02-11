@@ -9,7 +9,9 @@ pipeline{
         stage ('Compile Stage') {
             steps {
                 withMaven {
-                    sh 'mvn clean install -DskipTests && java -jar target/demo-0.0.1-SNAPSHOT.jar &'
+                    sh 'mvn clean install -DskipTests'
+                    sh 'docker -v'
+                    sh 'java -jar target/demo-0.0.1-SNAPSHOT.jar'
                 }
             }
         }

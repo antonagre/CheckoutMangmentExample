@@ -37,6 +37,14 @@ public class CheckoutController {
         return res;
     }
 
+    @PostMapping("/order/remove")
+    public String removeOrder(@RequestParam String id){
+        System.out.println("prima");
+        service.removeOrder(id);
+        System.out.println("dopo");
+        return "200";
+    }
+
     @PostMapping("/order/add")
     public ResponseEntity addOrder(@RequestParam String id,String name){
         System.out.println("prima");

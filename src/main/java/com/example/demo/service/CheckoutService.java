@@ -35,6 +35,11 @@ public class CheckoutService {
         return convertToOrderDTO(o);
     }
 
+    public void removeOrder(String id){
+        Order o = orderRepository.findDistinctByOrderId(id);
+        orderRepository.delete(o);
+    }
+
     public OrderDTO createOrder(String id){
         Order o;
         if(!orderRepository.existsOrderByOrderId(id)) o = orderRepository.save(Order.builder().orderId(id).cart(new ArrayList<Product>()).total(0).build());
