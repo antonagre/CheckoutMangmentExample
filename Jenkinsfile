@@ -16,16 +16,16 @@ pipeline{
    stage ('Test Stage') {
             steps {
                 withMaven {
-                    sh 'mvn clean install'
+                    sh 'mvn clean install && '
                 }
             }
    }
     stage ('Cucumber Reports') {
-        steps {
-         cucumber buildStatus: "FAILED",
-            fileIncludePattern: "**/cucumber.json",
-            jsonReportDirectory: 'target'
+            steps {
+             cucumber buildStatus: "FAILED",
+                fileIncludePattern: "**/cucumber.json",
+                jsonReportDirectory: 'target'
+            }
         }
     }
-            }
 }
