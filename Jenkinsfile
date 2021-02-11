@@ -19,14 +19,13 @@ pipeline{
                     sh 'mvn clean install'
                 }
             }
-        }
    }
-        stage ('Cucumber Reports') {
-            steps {
-             cucumber buildStatus: "FAILED",
-                fileIncludePattern: "**/cucumber.json",
-                jsonReportDirectory: 'target'
-            }
+    stage ('Cucumber Reports') {
+        steps {
+         cucumber buildStatus: "FAILED",
+            fileIncludePattern: "**/cucumber.json",
+            jsonReportDirectory: 'target'
         }
     }
+            }
 }
