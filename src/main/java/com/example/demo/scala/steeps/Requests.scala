@@ -3,7 +3,7 @@ package com.example.demo.scala.steeps
 import scalaj.http.{Http, HttpOptions}
 
 class Requests{
-  val url = "http://localhost:8080/checkout"
+  val url = "http://localhost:8081/checkout"
 
   def getRequest(endpoint:String): Any = {
     val http = Http(url+endpoint)
