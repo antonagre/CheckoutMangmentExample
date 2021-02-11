@@ -1,4 +1,4 @@
-package com.example.demo.scala.steeps
+package com.example.demo.scala
 import io.cucumber.scala.{EN, ScalaDsl, Scenario}
 
 
@@ -27,5 +27,3 @@ class Test01 extends ScalaDsl with EN{
     assert(tot==total)
   }
 }
-
-

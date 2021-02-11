@@ -1,4 +1,4 @@
-package com.example.demo.scala.steeps
+package com.example.demo.scala
 
 import scalaj.http.{Http, HttpOptions}
 
@@ -35,14 +35,13 @@ class Requests{
 
   def postRequestSoap(endpoint: String, soapBody:String): Unit ={
     val http2 = Http("http://localhost:8080/ws")
-    .postData(soapBody)
-    .header("Content-Type","text/xml ; charset=utf-8")
-    .option(HttpOptions.method("GET"))
-    .option(HttpOptions.connTimeout(0))
-    .option(HttpOptions.readTimeout(0))
+      .postData(soapBody)
+      .header("Content-Type","text/xml ; charset=utf-8")
+      .option(HttpOptions.method("GET"))
+      .option(HttpOptions.connTimeout(0))
+      .option(HttpOptions.readTimeout(0))
     http2.option(HttpOptions.allowUnsafeSSL)
     println(http2.asString.body)
   }
 
 }
-
