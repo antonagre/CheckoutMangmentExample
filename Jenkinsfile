@@ -15,6 +15,13 @@ pipeline{
                 }
             }
         }
-
    }
+        stage ('Cucumber Reports') {
+            steps {
+             cucumber buildStatus: "FAILED",
+                fileIncludePattern: "**/cucumber.json",
+                jsonReportDirectory: 'target'
+            }
+        }
+    }
 }

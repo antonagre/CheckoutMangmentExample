@@ -7,7 +7,6 @@ import com.example.demo.model.Product;
 import com.example.demo.repository.IOrderRepository;
 import com.example.demo.repository.IProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.jaxb.SpringDataJaxb;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
