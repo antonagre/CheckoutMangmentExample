@@ -1,5 +1,10 @@
 pipeline{
    agent any
+   
+   tools {
+      maven "3.6.3"
+   }
+   
    stages {
         stage ('Compile Stage') {
             steps {
@@ -10,7 +15,7 @@ pipeline{
         }
    stage ('Test Stage') {
             steps {
-                withMaven(maven: 'mvn') {
+                withMaven {
                     sh 'mvn clean install'
                 }
             }
