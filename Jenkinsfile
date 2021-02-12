@@ -6,14 +6,14 @@ pipeline{
         stage ('Compile Stage') {
             steps {
                 withMaven {
-                    sh 'mvn clean install -DskipTests'
+                    bat 'mvn clean install -DskipTests'
                 }
             }
         }
    stage ('Test Stage') {
             steps {
                 withMaven {
-                    sh 'mvn clean install'
+                    bat 'mvn clean install'
                 }
             }
         }
