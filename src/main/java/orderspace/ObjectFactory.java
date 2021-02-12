@@ -88,9 +88,9 @@ public class ObjectFactory {
      * Create an instance of {@link Product }
      * 
      */
-    public Product createProduct() {
-        return new Product();
-    }
+//    public Product createProduct() {
+//        return new Product();
+//    }
 
     /**
      * Create an instance of {@link GetOrderTotalRequest }
