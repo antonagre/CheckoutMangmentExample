@@ -5,3 +5,4 @@ COPY . /app
 WORKDIR /app
 
 RUN mvn clean install -DskipTests
+RUN mvn -Dtest=Runner test
