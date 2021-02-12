@@ -1,6 +1,9 @@
 pipeline {
-    agent { dockerfile true
+    agent {
+        dockerfile {
             args '-p 8081:8081'
+            label 'docker'
+        }
     }
     stages {
         stage('Test') {
