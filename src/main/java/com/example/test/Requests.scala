@@ -1,4 +1,4 @@
-package com.example.test.scala
+package com.example.test
 
 import scalaj.http.{Http, HttpOptions}
 

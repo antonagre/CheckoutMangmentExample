@@ -1,6 +1,6 @@
-package com.example.test.repository;
+package com.example.repository;
 
-import com.example.test.model.Order;
+import com.example.model.Order;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 

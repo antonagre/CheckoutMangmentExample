@@ -1,11 +1,11 @@
-package com.example.test.service;
+package com.example.service;
 
-import com.example.test.dto.OrderDTO;
-import com.example.test.dto.ProductDTO;
-import com.example.test.model.Order;
-import com.example.test.model.Product;
-import com.example.test.repository.IOrderRepository;
-import com.example.test.repository.IProductRepository;
+import com.example.dto.OrderDTO;
+import com.example.dto.ProductDTO;
+import com.example.model.Order;
+import com.example.model.Product;
+import com.example.repository.IOrderRepository;
+import com.example.repository.IProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;

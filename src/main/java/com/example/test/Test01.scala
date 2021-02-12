@@ -1,6 +1,6 @@
-package com.example.test.scala
-import io.cucumber.scala.{EN, ScalaDsl}
+package com.example.test
 
+import io.cucumber.scala.{EN, ScalaDsl}
 
 class Test01 extends ScalaDsl with EN{
   var test = new Requests

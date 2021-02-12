@@ -1,8 +1,8 @@
-package com.example.test.controller;
+package com.example.controller;
 
 import com.example.springsoap.gen.GetProductRequest;
 import com.example.springsoap.gen.GetProductResponse;
-import com.example.test.repository.SProductRepository;
+import com.example.repository.SProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;

@@ -1,6 +1,6 @@
-package com.example.test.controller;
+package com.example.controller;
 
-import com.example.test.repository.SOrderRepository;
+import com.example.repository.SOrderRepository;
 import orderspace.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
