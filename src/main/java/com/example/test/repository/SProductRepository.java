@@ -1,4 +1,4 @@
-package com.example.demo.repository;
+package com.example.test.repository;
 
 import com.example.springsoap.gen.Product;
 import org.springframework.stereotype.Component;

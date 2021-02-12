@@ -1,6 +1,6 @@
-package com.example.demo.dto;
+package com.example.test.dto;
 
-import com.example.demo.model.Product;
+import com.example.test.model.Product;
 import lombok.Builder;
 import lombok.Data;
 

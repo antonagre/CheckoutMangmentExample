@@ -6,13 +6,15 @@ pipeline{
    }
    
    stages {
-        stage ('Compile Stage') {
-            steps {
-                withMaven {
-                    //sh 'mvn clean install -DskipTests'
-                    sh 'sudo docker -v'
-                    sh 'java -jar target/demo-0.0.1-SNAPSHOT.jar'
+        stage('Back-end') {
+            agent {
+                docker {
+                image 'base-checkout'
+                args '-v $HOME/.m2:/root/.m2'
                 }
+            }
+            steps {
+                sh 'java -jar target/demo-0.0.1.jar'
             }
         }
    stage ('Test Stage') {

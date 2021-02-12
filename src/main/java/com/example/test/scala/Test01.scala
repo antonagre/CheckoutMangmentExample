@@ -1,4 +1,4 @@
-package com.example.demo.scala
+package com.example.test.scala
 import io.cucumber.scala.{EN, ScalaDsl, Scenario}
 
 
