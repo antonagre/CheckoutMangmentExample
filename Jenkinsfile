@@ -1,10 +1,5 @@
 pipeline{
-
-   tools {
-      maven "3.6.3"
-   }
-   
-   stages {
+    stages {
         stage('Back-end') {
             agent {
                 docker {
@@ -14,20 +9,6 @@ pipeline{
             }
             steps {
                 sh 'java -jar target/demo-0.0.1.jar'
-            }
-        }
-   stage ('Test Stage') {
-            steps {
-                withMaven {
-                    sh 'mvn clean install '
-                }
-            }
-   }
-    stage ('Cucumber Reports') {
-            steps {
-             cucumber buildStatus: "FAILED",
-                fileIncludePattern: "**/cucumber.json",
-                jsonReportDirectory: 'target'
             }
         }
     }
