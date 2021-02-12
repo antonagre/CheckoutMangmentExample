@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn -Dtest=Runner test'
+                sh 'mvn -X -Dtest=Runner test'
             }
         }
     }
