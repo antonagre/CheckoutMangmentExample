@@ -1,7 +1,6 @@
 pipeline {
     agent {
         dockerfile {
-            label 'docker'
             args '-p 8081:8081'
         }
     }
