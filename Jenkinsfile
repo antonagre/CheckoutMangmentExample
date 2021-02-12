@@ -13,8 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh ''
-                sh 'java -jar target/demo-0.0.1.jar'
+                sh 'screen java -jar target/demo-0.0.1.jar'
             }
         }
     }
