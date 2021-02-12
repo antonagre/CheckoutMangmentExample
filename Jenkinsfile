@@ -19,7 +19,7 @@ pipeline{
             steps {
 
                 withMaven {
-                    bat 'mvn clean install'
+                    bat 'mvn -Dtest=CucumberRunner test'
 
                 }
             }
