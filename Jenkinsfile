@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    tools{
+    tools {
         maven '3.6.3'
     }
     stages {
@@ -11,9 +11,14 @@ pipeline {
                 }
             }
         }
+        stage('Run') {
+            steps {
+                sh 'java -jar target/demo-0.0.1.jar &'
+            }
+        }
         stage('Test') {
             steps {
-                sh 'screen java -jar target/demo-0.0.1.jar'
+                sh 'mvn -Dtest=Runner test'
             }
         }
     }
