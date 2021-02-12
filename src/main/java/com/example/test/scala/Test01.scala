@@ -1,5 +1,5 @@
 package com.example.test.scala
-import io.cucumber.scala.{EN, ScalaDsl, Scenario}
+import io.cucumber.scala.{EN, ScalaDsl}
 
 
 class Test01 extends ScalaDsl with EN{
