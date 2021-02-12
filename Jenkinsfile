@@ -1,6 +1,9 @@
 pipeline{
 
    agent any
+   tools{
+           maven '3.6.3'
+       }
 
    stages {
 
@@ -9,7 +12,7 @@ pipeline{
             steps {
 
                 withMaven {
-                    bat 'mvn clean install -DskipTests'
+                    sh 'mvn clean install -DskipTests'
 
                 }
             }
@@ -19,7 +22,7 @@ pipeline{
             steps {
 
                 withMaven {
-                    bat 'mvn -Dtest=CucumberRunner test'
+                    sh 'mvn -Dtest=CucumberRunner test'
 
                 }
             }
