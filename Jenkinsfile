@@ -10,7 +10,7 @@ pipeline{
             agent {
                 docker {
                 image 'base-checkout'
-                args '-v $HOME/.m2:/root/.m2'
+                args '-p 8081:8081'
                 }
             }
             steps {
