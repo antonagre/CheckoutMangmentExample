@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Docker Backend') {
             agent {
-                Any
+                any
             }
             steps {
                 sh 'build -t base .'
