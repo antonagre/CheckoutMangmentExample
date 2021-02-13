@@ -9,6 +9,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'uname -a'
+                sh 'ls'
             }
         }
     }
