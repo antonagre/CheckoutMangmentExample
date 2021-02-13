@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Backend') {
             steps {
-                sh 'java -jar target/*.jar'
+                sh 'ls -lah'
             }
         }
     }
