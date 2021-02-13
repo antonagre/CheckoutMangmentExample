@@ -16,17 +16,14 @@ pipeline{
             steps {
                 withMaven {
                     sh 'mvn clean install -DskipTests'
-
                 }
             }
         }
 
         stage ('Build And Run Container') {
             steps {
-                docker.withServer('tcp://aadev.ml:4243', 'swarm-certs') {
-                    sh 'docker build -t checkout-image .'
-                    sh 'docker run -p 8090:8082 --rm --name checkout -itd checkout-image:latest java -jar *.jar '
-                }
+                sh 'docker build -t checkout-image .'
+                sh 'docker run -p 8090:8082 --rm --name checkout -itd checkout-image:latest java -jar *.jar '
             }
         }
 
@@ -41,9 +38,7 @@ pipeline{
 
         stage ('Test Stage') {
             steps {
-                docker.withServer('tcp://aadev.ml:4243', 'swarm-certs') {
-                    sh 'docker stop checkout'
-                }
+                sh 'docker stop checkout'
             }
         }
 
