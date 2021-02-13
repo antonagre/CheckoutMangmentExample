@@ -1,7 +1,8 @@
+tools {
+    maven "3.6.3"
+}
+
 node {
-    tools {
-        maven "3.6.3"
-    }
     stage ("Pull from Git") {
       checkout scm
     }
