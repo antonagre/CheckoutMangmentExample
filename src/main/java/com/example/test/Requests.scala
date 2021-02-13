@@ -11,7 +11,7 @@ class Requests{
       .option(HttpOptions.connTimeout(0))
       .option(HttpOptions.readTimeout(0))
       .option(HttpOptions.allowUnsafeSSL)
-    return http.asString.body
+    return http.asString
   }
 
   def postRequest(endpoint:String,data:String)= {
@@ -30,7 +30,7 @@ class Requests{
       .option(HttpOptions.connTimeout(0))
       .option(HttpOptions.readTimeout(0))
       .option(HttpOptions.allowUnsafeSSL)
-    println(http.asString)
+    println(http.asString.body)
   }
 
   def postRequestSoap(endpoint: String, soapBody:String): Unit ={
