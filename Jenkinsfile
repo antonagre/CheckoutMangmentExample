@@ -4,7 +4,7 @@ node {
     }
     stage ("Run Container") {
         docker.withServer('tcp://aadev.ml:4243', 'swarm-certs') {
-            docker.image('ccc:latest').withRun('-p 8090:8081 --name cccc -it java -jar target/demo-0.0.1-SNAPSHOT.jar ') {  c ->
+            docker.image('ccc:latest').withRun('-p 8090:8081 --name cccc -it ccc:latest java -jar target/demo-0.0.1-SNAPSHOT.jar ') {  c ->
 
             }
         }
