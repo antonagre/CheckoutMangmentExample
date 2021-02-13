@@ -11,9 +11,10 @@ pipeline {
         }
         stage('Run Backend') {
             agent {
-            docker {
-                image 'base:latest'
-                args '-p 8081:8081'
+                docker {
+                    image 'base:latest'
+                    args '-p 8081:8081'
+                }
             }
             steps {
                 sh 'java - jar target/*.jar'
