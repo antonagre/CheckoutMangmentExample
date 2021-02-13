@@ -8,6 +8,15 @@ node {
         }
     }
 
+    stage ("Run Cucumber Tests") {
+        tools {
+            maven '3.6.3'
+        }
+        withMaven {
+            sh 'mvn -X -Dtest=Runner test'
+        }
+    }
+
     stage ('Cucumber Reports') {
         cucumber buildStatus: "FAILED",
         fileIncludePattern: "**/cucumber.json",
