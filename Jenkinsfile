@@ -1,24 +1,9 @@
-pipeline {
-    agent none
-    stages {
-        stage('Build Docker Backend') {
-            agent {
-                any
-            }
-            steps {
-                sh 'build -t base .'
-            }
-        }
-        stage('Run Backend') {
-            agent {
-                docker {
-                    image 'base:latest'
-                    args '-p 8081:8081'
-                }
-            }
-            steps {
-                sh 'java - jar target/*.jar'
-            }
+node {
+    checkout scm
+
+    docker.withServer('tcp://aadev.ml:2376', 'swarm-certs') {
+        docker.image('ubuntu:latest').withRun('-p 8081:8090') {
+            sh "ls -lah"
         }
     }
 }
