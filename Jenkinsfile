@@ -11,7 +11,7 @@ node {
 
     stage ("Run Cucumber Tests") {
         docker.withServer('tcp://aadev.ml:4243', 'swarm-certs') {
-            sh 'docker run -p 8090:8082 --rm --name checkouTest -itd ccc:latest mvn -X -Dtest=Runner test'
+            sh 'docker run --rm --name checkouTest -itd ccc:latest mvn -X -Dtest=Runner test'
         }
     }
 
