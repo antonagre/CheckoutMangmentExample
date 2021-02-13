@@ -4,4 +4,4 @@
 
  WORKDIR /app
 
- RUN mvn clean install -DskipTests
+ ##RUN mvn clean install -DskipTests
