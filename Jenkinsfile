@@ -1,9 +1,12 @@
 node {
+    tools {
+        maven "3.6.3"
+    }
     stage ("Pull from Git") {
       checkout scm
     }
     stage ("Build Container Image") {
-        withMaven("3.6.3") {
+        withMaven {
             mvn clean install -DskipTests
         }
     }
@@ -15,7 +18,7 @@ node {
     }
 
     stage ("Run Cucumber Tests") {
-        withMaven("3.6.3") {
+        withMaven {
             sh 'mvn -X -Dtest=Runner test'
         }
 
