@@ -1,16 +1,12 @@
-tools {
-    maven "3.6.3"
-}
-
 node {
     stage ("Pull from Git") {
       checkout scm
     }
+
     stage ("Build Container Image") {
-        withMaven {
-            mvn clean install -DskipTests
-        }
+        sh 'mvn clean install -DskipTests'
     }
+
     stage ("Run Container") {
         docker.withServer('tcp://aadev.ml:4243', 'swarm-certs') {
             sh 'docker build -t checkout-image .'
@@ -19,10 +15,10 @@ node {
     }
 
     stage ("Run Cucumber Tests") {
-        withMaven {
-            sh 'mvn -X -Dtest=Runner test'
-        }
+        sh 'mvn -X -Dtest=Runner test'
+    }
 
+    stage ("Remove Test Spring Container") {
         docker.withServer('tcp://aadev.ml:4243', 'swarm-certs') {
             sh 'docker stop checkout'
         }
