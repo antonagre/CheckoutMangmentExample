@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker {
             image 'ubuntu:latest'
+            label 'docker'
         }
     }
     stages {
