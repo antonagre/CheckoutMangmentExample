@@ -7,7 +7,7 @@ node {
             docker.image('ccc:latest').withRun('-p 8090:8081') {
                 sh "ls target"
                 sh "cd target"
-                sh "java"
+                sh "java -jar *.jar"
             }
         }
     }
