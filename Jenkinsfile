@@ -36,7 +36,7 @@ pipeline{
             }
         }
 
-        stage ('Test Stage') {
+        stage ('Remove Test Container') {
             steps {
                 sh 'docker stop checkout'
             }
