@@ -1,41 +1,12 @@
-pipeline{
-
-   agent any
-   tools{
-           maven '3.6.3'
-       }
-
-   stages {
-
-        stage ('Compile Stage') {
-
+pipeline {
+    agent {
+        docker { image 'ubuntu:latest }
+    }
+    stages {
+        stage('Test') {
             steps {
-
-                withMaven {
-                    sh 'mvn clean install -DskipTests'
-
-                }
+                sh 'uname -a'
             }
         }
-   stage ('Test Stage') {
-
-            steps {
-
-                withMaven {
-                    sh 'mvn -Dtest=CucumberRunner test'
-
-                }
-            }
-        }
-
-        stage ('Cucumber Reports') {
-
-                    steps {
-                     cucumber buildStatus: "FAILED",
-                        fileIncludePattern: "**/cucumber.json",
-                        jsonReportDirectory: 'target'
-
-                    }
-                }
-           }
-   }
+    }
+}
