@@ -6,6 +6,13 @@ pipeline{
    }
 
    stages {
+
+        stage ('Remove Test Container') {
+            steps {
+                sh 'docker stop checkout'
+            }
+        }
+
         stage ("Pull from Git") {
             steps {
                 checkout scm
@@ -33,12 +40,6 @@ pipeline{
                 withMaven {
                     sh 'mvn -Dtest=RunCucumberRunner test'
                 }
-            }
-        }
-
-        stage ('Remove Test Container') {
-            steps {
-                sh 'docker stop checkout'
             }
         }
 
