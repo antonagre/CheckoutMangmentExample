@@ -23,7 +23,7 @@ pipeline{
         stage ('Build And Run Container') {
             steps {
                 sh 'docker build -t checkout-image .'
-                sh 'docker run -p 8090:8082 --rm --name checkout -it checkout-image:latest java -jar target/*.jar '
+                sh 'docker run -p 8090:8082 --rm --name checkout -d checkout-image:latest java -jar target/*.jar '
             }
         }
 
