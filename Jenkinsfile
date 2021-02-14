@@ -13,12 +13,6 @@ pipeline{
             }
         }
 
-        stage ("Pull from Git") {
-            steps {
-                checkout scm
-            }
-        }
-
         stage ('Compile Stage') {
             steps {
                 withMaven {
@@ -40,6 +34,11 @@ pipeline{
                 withMaven {
                     sh 'mvn -Dtest=RunCucumberRunner test'
                 }
+            }
+        }
+        stage ("Pull from Git") {
+            steps {
+                checkout scm
             }
         }
 
