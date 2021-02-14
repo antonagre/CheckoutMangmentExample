@@ -21,10 +21,15 @@ pipeline{
         }
 
         stage ('Build And Run Container') {
+            agent {
+                docker {
+                    dockerfile true
+                    args 'p 8090:8082 --rm --name checkout -itd'
+                }
+            }
             steps {
                 docker.withServer('tcp://aadev.ml:4243', 'swarm-certs') {
-                    sh 'docker build -t base .'
-                    sh 'docker run -p 8090:8082 --rm --name checkout -itd base:latest java -jar target/*.jar '
+                sh 'java -jar target/*.jar '
                 }
             }
         }
