@@ -25,7 +25,7 @@ pipeline{
                 script {
                     docker.withServer('tcp://aadev.ml:4243', 'swarm-certs') {
                         sh 'docker build -t base .'
-                        sh 'docker run -p 8090:8082 --rm --name checkout -itd base:latest java -jar target/demo-0.0.1-SNAPSHOT.jar'
+                        sh 'docker run -p 8090:8082 --rm --name checkout -it base:latest java -jar target/demo-0.0.1-SNAPSHOT.jar'
                     }
                 }
             }
