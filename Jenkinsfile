@@ -36,7 +36,7 @@ pipeline{
         stage ('Test Stage') {
             steps {
                 withMaven {
-                    sh 'mvn -Dtest=RunCucumberRunner test'
+                    sh 'mvn -Dtest=Runner test'
                 }
             }
         }
