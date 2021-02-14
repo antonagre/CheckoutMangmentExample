@@ -22,7 +22,7 @@ pipeline{
 
         stage ('Build And Run Container') {
             agent {
-                docker {
+                agent {
                     dockerfile true
                     args 'p 8090:8082 --rm --name checkout -itd'
                 }
