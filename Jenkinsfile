@@ -6,12 +6,11 @@ pipeline{
    }
 
    stages {
-
-        stage ('Remove Test Container') {
-            steps {
-                sh 'docker stop checkout'
-            }
-        }
+       stage ("Pull from Git") {
+           steps {
+               checkout scm
+           }
+       }
 
         stage ('Compile Stage') {
             steps {
@@ -36,9 +35,10 @@ pipeline{
                 }
             }
         }
-        stage ("Pull from Git") {
+
+        stage ('Remove Test Container') {
             steps {
-                checkout scm
+                sh 'docker stop checkout'
             }
         }
 
