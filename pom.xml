@@ -10,13 +10,11 @@
     </parent>
     <groupId>com.example</groupId>
     <artifactId>demo</artifactId>
-    <version>0.0.1</version>
-    <name>checkout</name>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>demo</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
-        <scala.version></scala.version>
-        <cucumber.version>6.1.1</cucumber.version>
     </properties>
 
     <dependencies>
@@ -27,16 +25,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>2.13.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.scalaj</groupId>
-            <artifactId>scalaj-http_2.13</artifactId>
-            <version>2.4.2</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -57,28 +45,40 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web-services</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-scala_2.13</artifactId>
-            <version>${cucumber.version}</version>
+            <groupId>org.scalaj</groupId>
+            <artifactId>scalaj-http_2.13</artifactId>
+            <version>2.4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jmotor.tools</groupId>
+            <artifactId>search-maven-org-scala-sdk_2.13</artifactId>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-core</artifactId>
-            <version>${cucumber.version}</version>
+            <artifactId>cucumber-java</artifactId>
+            <version>6.9.1</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber.version}</version>
+            <version>6.9.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-scala -->
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-scala_2.10</artifactId>
-            <version>2.0.1</version>
+            <artifactId>cucumber-scala_2.13</artifactId>
+            <version>6.9.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
+
 
 </project>
