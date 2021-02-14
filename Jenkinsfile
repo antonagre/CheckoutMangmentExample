@@ -24,7 +24,6 @@ pipeline{
             agent {
                 agent {
                     dockerfile true
-                    args 'p 8090:8082 --rm --name checkout -itd'
                 }
             }
             steps {
