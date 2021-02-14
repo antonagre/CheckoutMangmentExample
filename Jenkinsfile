@@ -28,9 +28,7 @@ pipeline{
                 }
             }
             steps {
-                docker.withServer('tcp://aadev.ml:4243', 'swarm-certs') {
                 sh 'java -jar target/*.jar '
-                }
             }
         }
 
