@@ -59,6 +59,16 @@
             <version>2.13.4</version>
         </dependency>
         <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.13.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-reflect</artifactId>
+            <version>2.13.4</version>
+        </dependency>
+        <dependency>
             <groupId>org.jmotor.tools</groupId>
             <artifactId>search-maven-org-scala-sdk_2.13</artifactId>
             <version>1.0.1</version>
