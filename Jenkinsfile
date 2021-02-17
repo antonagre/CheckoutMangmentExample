@@ -15,7 +15,8 @@ pipeline{
         stage ('Compile Stage') {
             steps {
                 withMaven {
-                    sh 'mvn clean install -DskipTests'
+                    //sh 'mvn clean install -DskipTests'
+                    sh 'ls target'
                 }
             }
         }
@@ -23,10 +24,8 @@ pipeline{
         stage ('Build And Run Container') {
             steps{
                 script {
-                    docker.withServer('tcp://aadev.ml:4243', 'swarm-certs') {
-                        sh 'docker build -t base .'
-                        sh 'docker run -p 8085:8085 -itd --rm --name checkout base:latest java -jar target/demo-0.0.1-SNAPSHOT.jar'
-                    }
+                    sh 'docker build -t base .'
+                    sh 'docker run -p 8085:8085 -itd --rm --name checkout base:latest java -jar target/demo-0.0.1-SNAPSHOT.jar'
                 }
             }
         }
@@ -38,12 +37,6 @@ pipeline{
                 withMaven {
                     sh 'mvn -Dtest=Runner test'
                 }
-            }
-        }
-
-        stage ('Remove Test Container') {
-            steps {
-                sh 'docker stop checkout'
             }
         }
 
