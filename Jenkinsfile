@@ -24,6 +24,7 @@ pipeline{
         stage ('Build And Run Container') {
             steps{
                 script {
+                    echo "DOCKER: checkout container"
                     //sh 'docker build -t base .'
                     //sh 'docker run -p 8085:8085 -itd --rm --name checkout base:latest java -jar target/demo-0.0.1-SNAPSHOT.jar'
                 }
