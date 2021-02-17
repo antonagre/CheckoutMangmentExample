@@ -60,21 +60,11 @@
             <artifactId>scalaj-http_2.13</artifactId>
             <version>2.4.2</version>
         </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-scala_2.13</artifactId>
-            <version>6.8.1</version>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>org.jmotor.tools</groupId>
             <artifactId>search-maven-org-scala-sdk_2.13</artifactId>
             <version>1.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>6.9.1</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -95,27 +85,27 @@
     </dependencies>
 
     <build>
-    <plugins>
-    <plugin>
-        <!-- Build an executable JAR -->
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.2.0</version>
-        <configuration>
-            <archive>
-                <manifest>
-                    <addClasspath>true</addClasspath>
-                    <classpathPrefix>lib/</classpathPrefix>
-                    <mainClass>com.example.DemoApplication</mainClass>
-                </manifest>
-            </archive>
-        </configuration>
-    </plugin>
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
+        <plugins>
+            <plugin>
+                <!-- Build an executable JAR -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>com.example.DemoApplication</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
 
 </project>
