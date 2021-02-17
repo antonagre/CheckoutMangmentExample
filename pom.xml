@@ -61,6 +61,12 @@
             <version>2.4.2</version>
         </dependency>
         <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-scala_2.13</artifactId>
+            <version>6.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.jmotor.tools</groupId>
             <artifactId>search-maven-org-scala-sdk_2.13</artifactId>
             <version>1.0.1</version>

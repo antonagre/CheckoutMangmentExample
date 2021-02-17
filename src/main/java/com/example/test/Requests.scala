@@ -3,7 +3,8 @@ package com.example.test
 import scalaj.http.{Http, HttpOptions}
 
 class Requests{
-  val url = "http://127.0.0.1:8085/checkout"
+  val url = "http://localhost:8086/checkout"
+  postRequest("/order/create?id=3")
 
   def getRequest(endpoint:String): Any = {
     val http = Http(url+endpoint)
@@ -11,7 +12,7 @@ class Requests{
       .option(HttpOptions.connTimeout(0))
       .option(HttpOptions.readTimeout(0))
       .option(HttpOptions.allowUnsafeSSL)
-    return http.asString
+    return http.asString.body
   }
 
   def postRequest(endpoint:String,data:String)= {

@@ -25,8 +25,9 @@ public class CheckoutController {
     public int getOrderTotal(@RequestParam String id){
         System.out.println("prima");
         OrderDTO order = service.getOrder(id);
+        int total = order.getTotal();
         System.out.println("dopo");
-        return order.getTotal();
+        return total;
     }
 
     @PostMapping("/order/create")

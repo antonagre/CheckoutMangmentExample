@@ -21,9 +21,9 @@ class Test01 extends ScalaDsl with EN{
   }
 
   Then("""the checkout has {int} EUR in the total value""") { (tot: Int) =>
-    val total=test.getRequest("/order/total/get?id="+idOrder)
-    print("total "+total+" expected "+tot)
+    val total=test.getRequest("/order/total/get?id="+idOrder).toString.toInt
+    println("total "+total+" expected "+tot)
     test.postRequest("/order/remove?id="+idOrder)
-    assert(tot==tot)///FALSE
+    assert(tot==total)///FALSE
   }
 }
