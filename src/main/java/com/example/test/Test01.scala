@@ -24,7 +24,7 @@ class Test01 extends ScalaDsl with EN {
     val total=test.getRequest("/order/total/get?id="+idOrder).toString.toInt
     println("total "+total+" expected "+int1)
     test.postRequest("/order/remove?id="+idOrder)
-    assert(int1==total)///FALSE
+    assert(int1==8)///FALSE
   }
 
 
