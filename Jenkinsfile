@@ -29,6 +29,7 @@ pipeline{
                     sh 'docker build -t base .'
                     sh 'docker images ls'
                     sh 'docker run -p 8085:8085 -itd --rm --name checkout base:latest java -jar target/demo-0.0.1-SNAPSHOT.jar'
+                    sh 'docker container ls'
                 }
             }
         }
