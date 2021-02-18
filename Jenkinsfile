@@ -26,15 +26,15 @@ pipeline{
             steps{
                 script {
                     try {
-                       echo 'remove checkout container'
-                       sh 'docker container stop checkout'
+                        sh 'docker container stop checkout'
+                        echo 'checkout container removed'
                     }
                     catch (all){
                        echo 'no checkout container running'
                     }
-                    echo "DOCKER: checkout container"
                     sh 'docker build -t base .'
                     sh 'docker run -p 8085:8085 --rm -itd --name checkout base:latest java -jar target/*.jar'
+                    sleep 30
                 }
             }
         }
