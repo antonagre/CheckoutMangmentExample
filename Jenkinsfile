@@ -34,7 +34,7 @@ pipeline{
                     }
                     echo "DOCKER: checkout container"
                     sh 'docker build -t base .'
-                    sh 'docker run -p 8085:8085 -itd --name checkout base:latest java -jar target/*.jar'
+                    sh 'docker run -p 8085:8085 -itd --name --rm checkout base:latest java -jar target/*.jar'
                 }
             }
         }
