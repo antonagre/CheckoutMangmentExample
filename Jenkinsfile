@@ -8,6 +8,7 @@ pipeline{
    stages {
        stage ("Pull from Git") {
            steps {
+               cleanWs()
                checkout scm
            }
        }
