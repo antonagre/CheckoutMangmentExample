@@ -27,7 +27,7 @@ pipeline{
                 script {
                     try {
                         sh 'docker container stop checkout'
-                        echo 'checkout container removed'
+                        echo 'Checkout container removed'
                     }
                     catch (all){
                        echo 'no checkout container running'
@@ -44,7 +44,6 @@ pipeline{
                 withMaven {
                     sh 'mvn -Dtest=Runner test'
                 }
-                telegramSend 'Hello World'
             }
         }
 
