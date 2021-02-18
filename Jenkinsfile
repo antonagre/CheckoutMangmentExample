@@ -44,6 +44,7 @@ pipeline{
                 withMaven {
                     sh 'mvn -Dtest=Runner test'
                 }
+                telegramSend 'Hello World'
             }
         }
 
