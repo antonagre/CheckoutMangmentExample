@@ -29,7 +29,7 @@ pipeline{
                        echo 'remove checkout container'
                        sh 'docker container stop checkout'
                     }
-                    catch {
+                    catch (all){
                        echo 'no checkout container running'
                     }
                     echo "DOCKER: checkout container"
