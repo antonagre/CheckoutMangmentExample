@@ -5,6 +5,7 @@ import scalaj.http.{Http, HttpOptions}
 class Requests{
   val url = "http://knightaa.ml:8085/checkout"
 
+  
   def getRequest(endpoint:String): Any = {
     val http = Http(url+endpoint)
       .option(HttpOptions.method("GET"))
