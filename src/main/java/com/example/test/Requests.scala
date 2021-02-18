@@ -3,7 +3,7 @@ package com.example.test
 import scalaj.http.{Http, HttpOptions}
 
 class Requests{
-  val url = "http://aadev.ml:8085/checkout"
+  val url = "http://knightaa.ml:8085/checkout"
 
   def getRequest(endpoint:String): Any = {
     val http = Http(url+endpoint)
