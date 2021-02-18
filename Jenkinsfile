@@ -25,10 +25,16 @@ pipeline{
         stage ('Build And Run Container') {
             steps{
                 script {
+                    try {
+                       echo 'remove checkout container'
+                       sh 'docker container stop checkout'
+                    }
+                    catch {
+                       echo 'no checkout container running'
+                    }
                     echo "DOCKER: checkout container"
                     sh 'docker build -t base .'
                     sh 'docker run -p 8085:8085 -itd --name checkout base:latest java -jar target/*.jar'
-                    sh 'docker container ls'
                 }
             }
         }
