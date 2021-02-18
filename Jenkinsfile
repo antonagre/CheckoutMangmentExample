@@ -33,13 +33,11 @@ pipeline{
                        echo 'no checkout container running'
                     }
                     sh 'docker build -t base .'
-                    sh 'docker run -p 8085:8085 --rm -itd --name checkout base:latest java -jar target/*.jar'
+                    sh 'docker run -p 8085:8085 --rm -itd --name checkout base:latest'
                     sleep 10
                 }
             }
         }
-
-
 
         stage ('Test Stage') {
             steps {
