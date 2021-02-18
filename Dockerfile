@@ -1,4 +1,4 @@
-FROM maven:3.6.0-jdk-13
+FROM adoptopenjdk/openjdk15:latest
 
 COPY . /app
 WORKDIR /app
