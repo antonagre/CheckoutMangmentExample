@@ -34,7 +34,7 @@ pipeline{
                     }
                     sh 'docker build -t base .'
                     sh 'docker run -p 8085:8085 --rm -itd --name checkout base:latest java -jar target/*.jar'
-                    sleep 30
+                    sleep 10
                 }
             }
         }
